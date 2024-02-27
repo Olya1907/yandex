@@ -1,0 +1,234 @@
+@charset "UTF-8";
+/*Обнуление*/
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+a:active, a:focus {
+  outline: none;
+}
+
+input, textarea {
+  outline: none;
+}
+
+input:active, textarea:active {
+  outline: none;
+}
+
+:focus {
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+textarea {
+  resize: horizontal;
+}
+
+/* Контейнер */
+/* One */
+.container {
+  width: 100%;
+  max-width: 1366px;
+  padding: 0 72px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Two */
+@media (max-width: 1240px) {
+  .container {
+    width: 100%;
+    padding: 0 20px;
+  }
+}
+/* Three */
+@media (max-width: 1024px) {
+  .container {
+    width: 828px;
+    padding: 0 30px;
+  }
+}
+/* Four */
+@media (max-width: 767px) {
+  .container {
+    width: 100%;
+    padding: 0 20px;
+  }
+}
+.header {
+  padding-top: 26px;
+  padding-bottom: 130px;
+  background: url("/image/header__cover.jpg") no-repeat center;
+}
+.header__logo img {
+  width: 245px;
+  height: 36px;
+}
+.header__info {
+  width: 100%;
+  max-width: 542px;
+}
+.header__title {
+  padding-top: 62px;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: Merriweather;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  text-transform: uppercase;
+  color: #313131;
+}
+.header .title-position-one {
+  padding-left: 91px;
+}
+.header .title-position-two {
+  padding-left: 33px;
+}
+.header__description {
+  padding-top: 24px;
+  text-align: center;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: "Golos Text";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  color: #313131;
+}
+.header__buttons-block {
+  display: flex;
+  gap: 16px;
+  padding-top: 40px;
+}
+.header__button {
+  width: 100%;
+}
+.header__button-black {
+  padding: 13px 20px;
+  background: #1F1F1F;
+  border-radius: 66px;
+  border: 2px solid #1F1F1F;
+  color: #FFF;
+  text-align: center;
+  font-family: "Golos Text";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+}
+.header__button-opacity {
+  padding: 13px 20px;
+  border-radius: 66px;
+  border: 2px solid #1F1F1F;
+  color: #1F1F1F;
+  text-align: center;
+  font-family: "Golos Text";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.lecture {
+  padding-top: 80px;
+}
+.lecture__info {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.lecture__text {
+  width: 100%;
+  max-width: 764px;
+  color: #313131;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: Merriweather;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 135%;
+  text-transform: uppercase;
+}
+.lecture .info-red {
+  color: #F54932;
+}
+.lecture__img img {
+  width: 394px;
+  height: 250px;
+  flex-shrink: 0;
+}/*# sourceMappingURL=slyle.css.map */

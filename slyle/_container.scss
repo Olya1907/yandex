@@ -1,0 +1,40 @@
+/* Контейнер */
+
+/* One */
+.container {
+  width: 100%;
+  max-width: 1366px;
+  padding: 0 72px;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  // background: rgba(0, 255, 21, 0.2);
+}
+/* Two */
+@media (max-width: 1240px) {
+  .container {
+    width: 100%;
+    padding: 0 20px;
+
+    // background: rgba(251, 255, 0, 0.2);
+  }
+}
+/* Three */
+@media (max-width: 1024px) {
+  .container {
+    width: 828px;
+    padding: 0 30px;
+
+    // background: rgb(0, 0, 255, 0.2);
+  }
+}
+/* Four */
+// Точка слома начинается от 766px
+@media (max-width: 767px) {
+  .container {
+    width: 100%;
+    padding: 0 20px;
+
+    // background: rgba(234, 0, 255, 0.2);
+  }
+}
