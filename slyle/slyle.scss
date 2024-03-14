@@ -14,7 +14,7 @@
     @include sm {
         background: url('/image/header__cover-sm.png') no-repeat center;
         background-size: cover;
-        height: 855px; 
+        height: 855px;
     }
 
     &__logo {
@@ -205,6 +205,10 @@
 .session {
     padding-top: 64px;
 
+    @include sm {
+        display: none;
+    }
+
     &__block {
         display: flex;
         gap: 44px;
@@ -212,8 +216,15 @@
 
     &__img {
         img {
-            width: 454px;
-            height: 527px;
+            width: auto;
+            max-width: 454px;
+            height: auto;
+
+            @include md {
+                width: auto;
+                max-width: 30vw;
+                height: auto;
+            }
         }
     }
 
@@ -246,7 +257,6 @@
     }
 
     td {
-        padding: 16px;
         /* Поля вокруг содержимого таблицы */
         border: 1px solid #D0D0D0;
         /* Параметры рамки */
@@ -255,7 +265,9 @@
     }
 
     &__table-grey {
-        padding-left: 0px;
+        width: 306px;
+
+        padding: 16px 16px 16px 0;
         font-variant-numeric: lining-nums proportional-nums;
         font-family: "Golos Text";
         font-size: 20px;
@@ -274,23 +286,107 @@
         font-style: normal;
         font-weight: 600;
         line-height: 120%;
-        padding-left: 16px;
-        padding-bottom: 16px;
+        padding: 16px;
     }
 
-    .strikethrough {
-        text-decoration: line-through;
+    &__table-first {
+        padding-top: 0;
+    }
+
+    &__table-last {
+        padding-bottom: 0;
     }
 
     .info-blue {
-        color: #3057A2;
+        padding-top: 48px;
+
         font-variant-numeric: lining-nums proportional-nums;
         font-family: "Golos Text";
         font-size: 20px;
         font-style: normal;
         font-weight: 400;
         line-height: 120%;
+        color: #3057A2;
     }
+}
+
+.strikethrough {
+    text-decoration: line-through;
+    text-decoration-color: #F54932;
+}
+
+.session-mob {
+    display: none;
+
+    @include sm {
+        display: block;
+    }
+
+    &__img {
+        width: 100%;
+        height: auto;
+    }
+
+    &__text {
+        font-variant-numeric: lining-nums proportional-nums;
+        font-family: Merriweather;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 135%;
+        color: #313131;
+    }
+
+
+    table {
+        width: 100%;
+        max-width: 336px;
+        border-collapse: collapse;
+        /* Убираем двойные линии между ячейками */
+        border: 3px solid white;
+        /* Прячем рамку вокруг таблицы */
+    }
+
+    td {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        border: 2px solid #D0D0D0;
+        /* Параметры рамки */
+        text-align: left;
+        /* Выравнивание по левому краю */
+    }
+
+    &__table-grey {
+        padding-bottom: 12px;
+
+        font-variant-numeric: lining-nums proportional-nums;
+        font-family: "Golos Text";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%;
+        color: #313131;
+        opacity: 0.7;
+    }
+
+    &__table-black {
+        font-variant-numeric: lining-nums proportional-nums;
+        font-family: "Golos Text";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%;
+        color: #313131;
+    }
+
+    &__table-first {
+        padding-top: 0;
+    }
+
+    &__table-last {
+        padding-bottom: 0;
+    }
+
 }
 
 // ////////////////////////////////////////////////////

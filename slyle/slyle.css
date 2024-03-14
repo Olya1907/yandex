@@ -307,13 +307,26 @@ textarea {
 .session {
   padding-top: 64px;
 }
+@media all and (max-width: 767px) {
+  .session {
+    display: none;
+  }
+}
 .session__block {
   display: flex;
   gap: 44px;
 }
 .session__img img {
-  width: 454px;
-  height: 527px;
+  width: auto;
+  max-width: 454px;
+  height: auto;
+}
+@media all and (max-width: 1024px) {
+  .session__img img {
+    width: auto;
+    max-width: 30vw;
+    height: auto;
+  }
 }
 .session__text {
   padding-bottom: 60px;
@@ -335,7 +348,6 @@ textarea {
   /* Прячем рамку вокруг таблицы */
 }
 .session td {
-  padding: 16px;
   /* Поля вокруг содержимого таблицы */
   border: 1px solid #D0D0D0;
   /* Параметры рамки */
@@ -343,7 +355,8 @@ textarea {
   /* Выравнивание по левому краю */
 }
 .session__table-grey {
-  padding-left: 0px;
+  width: 306px;
+  padding: 16px 16px 16px 0;
   font-variant-numeric: lining-nums proportional-nums;
   font-family: "Golos Text";
   font-size: 20px;
@@ -361,20 +374,92 @@ textarea {
   font-style: normal;
   font-weight: 600;
   line-height: 120%;
-  padding-left: 16px;
-  padding-bottom: 16px;
+  padding: 16px;
 }
-.session .strikethrough {
-  text-decoration: line-through;
+.session__table-first {
+  padding-top: 0;
+}
+.session__table-last {
+  padding-bottom: 0;
 }
 .session .info-blue {
-  color: #3057A2;
+  padding-top: 48px;
   font-variant-numeric: lining-nums proportional-nums;
   font-family: "Golos Text";
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
+  color: #3057A2;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  text-decoration-color: #F54932;
+}
+
+.session-mob {
+  display: none;
+}
+@media all and (max-width: 767px) {
+  .session-mob {
+    display: block;
+  }
+}
+.session-mob__img {
+  width: 100%;
+  height: auto;
+}
+.session-mob__text {
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: Merriweather;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 135%;
+  color: #313131;
+}
+.session-mob table {
+  width: 100%;
+  max-width: 336px;
+  border-collapse: collapse;
+  /* Убираем двойные линии между ячейками */
+  border: 3px solid white;
+  /* Прячем рамку вокруг таблицы */
+}
+.session-mob td {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border: 2px solid #D0D0D0;
+  /* Параметры рамки */
+  text-align: left;
+  /* Выравнивание по левому краю */
+}
+.session-mob__table-grey {
+  padding-bottom: 12px;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: "Golos Text";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  color: #313131;
+  opacity: 0.7;
+}
+.session-mob__table-black {
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: "Golos Text";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  color: #313131;
+}
+.session-mob__table-first {
+  padding-top: 0;
+}
+.session-mob__table-last {
+  padding-bottom: 0;
 }
 
 .stages {
