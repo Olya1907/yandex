@@ -392,7 +392,8 @@
 // ////////////////////////////////////////////////////
 
 .stages {
-    padding-top: 200px;
+    overflow: hidden;
+    padding: 200px 0;
 
     &__title {
         width: 100%;
@@ -400,6 +401,7 @@
     }
 
     &__title-text {
+        padding-bottom: 54px;
         font-variant-numeric: lining-nums proportional-nums;
         font-family: Merriweather;
         font-size: 54px;
@@ -419,6 +421,98 @@
         font-style: normal;
         font-weight: 400;
         line-height: 120%;
+    }
+
+    &__num {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 36px;
+        height: 36px;
+        border-radius: 60px;
+        background: #FFF;
+
+        font-variant-numeric: lining-nums proportional-nums;
+        font-family: "Golos Text";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%;
+        color: #313131;
+    }
+
+    &__desc {
+        font-family: "Golos Text";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%;
+        color: #313131;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 20px;
+        grid-template-areas:
+            'a b c'
+            'd e c'
+            'f g g';
+    }
+
+    &__item {
+        display: flex;
+        gap: 16px;
+        padding: 20px;
+        background: url(<path-to-image>) lightgray -234.21px -402.269px / 121.971% 265.886% no-repeat;
+    }
+
+    &__item-1 {
+        grid-area: a;
+    }
+
+    &__item-2 {
+        grid-area: b;
+    }
+
+    &__item-3 {
+        grid-area: c;
+    }
+
+    &__item-4 {
+        grid-area: d;
+    }
+
+    &__item-5 {
+        grid-area: e;
+    }
+
+    &__item-6 {
+        grid-area: f;
+    }
+
+    &__item-7 {
+        grid-area: g;
+        z-index: 1;
+        position: relative;
+
+        p {
+            z-index: 3;
+            width: 446 / 803 * 100%;
+            // max-width: 446px;
+        }
+    }
+
+    &__image {
+        z-index: 2;
+        position: absolute;
+        bottom: 0;
+        right: -70px;
+        img {
+
+        }
     }
 }
 

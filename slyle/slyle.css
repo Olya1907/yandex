@@ -463,13 +463,15 @@ textarea {
 }
 
 .stages {
-  padding-top: 200px;
+  overflow: hidden;
+  padding: 200px 0;
 }
 .stages__title {
   width: 100%;
   max-width: 806px;
 }
 .stages__title-text {
+  padding-bottom: 54px;
   font-variant-numeric: lining-nums proportional-nums;
   font-family: Merriweather;
   font-size: 54px;
@@ -488,7 +490,77 @@ textarea {
   font-weight: 400;
   line-height: 120%;
 }
-
+.stages__num {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 36px;
+  height: 36px;
+  border-radius: 60px;
+  background: #FFF;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: "Golos Text";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  color: #313131;
+}
+.stages__desc {
+  font-family: "Golos Text";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  color: #313131;
+}
+.stages__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 20px;
+  grid-template-areas: "a b c" "d e c" "f g g";
+}
+.stages__item {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  background: url(<path-to-image>) lightgray -234.21px -402.269px/121.971% 265.886% no-repeat;
+}
+.stages__item-1 {
+  grid-area: a;
+}
+.stages__item-2 {
+  grid-area: b;
+}
+.stages__item-3 {
+  grid-area: c;
+}
+.stages__item-4 {
+  grid-area: d;
+}
+.stages__item-5 {
+  grid-area: e;
+}
+.stages__item-6 {
+  grid-area: f;
+}
+.stages__item-7 {
+  grid-area: g;
+  z-index: 1;
+  position: relative;
+}
+.stages__item-7 p {
+  z-index: 3;
+  width: 55.5417185554%;
+}
+.stages__image {
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+  right: -70px;
+}
 .participants {
   padding-top: 200px;
   padding-bottom: 200px;
