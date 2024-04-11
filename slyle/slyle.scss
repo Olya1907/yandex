@@ -5,8 +5,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
-// $primary-color: #b00808;
-
 .header {
     padding-top: 26px;
     padding-bottom: 130px;
@@ -115,6 +113,13 @@
         font-size: 16px;
         font-style: normal;
         font-weight: 500;
+
+
+        &:hover {
+            color: #1F1F1F;
+            background: #FBCE51;
+            border: 2px solid #FBCE51;
+        }
     }
 
     &__button-opacity {
@@ -128,6 +133,18 @@
         font-size: 16px;
         font-style: normal;
         font-weight: 500;
+
+        @include md {
+            background: rgb(255 255 255 / 90%);
+            border: 2px solid #FFFFFF;
+        }
+
+        &:hover {
+            background: #1F1F1F;
+            border: 2px solid #1F1F1F;
+            color: #FFF;
+        }
+
     }
 
     &__br {
@@ -138,6 +155,7 @@
 }
 
 .lecture {
+    overflow: hidden;
     padding-top: 80px;
 
     @include sm {
@@ -392,11 +410,13 @@
 
 }
 
-// ////////////////////////////////////////////////////
-
 .stages {
     overflow: hidden;
     padding-top: 200px;
+
+    @include sm {
+        display: none;
+    }
 
     &__title {
         width: 100%;
@@ -417,13 +437,12 @@
     &__description {
         display: inline-block;
 
-        color: #3057A2;
-        font-variant-numeric: lining-nums proportional-nums;
         font-family: "Golos Text";
         font-size: 20px;
         font-style: normal;
         font-weight: 400;
         line-height: 120%;
+        color: #3057A2;
     }
 
     &__num {
@@ -463,13 +482,24 @@
             'a b c'
             'd e c'
             'f g g';
+        
+        @include md {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto auto auto;
+            grid-template-areas:
+            'a b'
+            'c d'
+            'e f'
+            'g g';
+        }
     }
 
     &__item {
         display: flex;
         gap: 16px;
         padding: 20px;
-        background: url(<path-to-image>) lightgray -234.21px -402.269px / 121.971% 265.886% no-repeat;
+        // background: url(<path-to-image>) lightgray -234.21px -402.269px / 121.971% 265.886% no-repeat;
+        background: url('/image/stages_back.jpg');
     }
 
     &__item-1 {
@@ -514,13 +544,198 @@
         bottom: 0;
         right: -70px;
 
+        @include md {
+            right: -120px;
+        }
+
         img {}
+    }
+}
+
+.stages-mob {
+    display: none;
+
+    @include sm {
+        display: block;
+        padding-top: 120px;
+    }
+
+    h2 {
+        font-family: Merriweather;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 39px;
+        color: rgba(49, 49, 49, 1);
+    }
+
+    &__subtitle {
+        padding-top: 12px;
+        font-family: "Golos Text";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%;
+        color: #3057A2;
+    }
+
+    &__num {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 36px;
+        height: 36px;
+        border-radius: 60px;
+        background: #FFF;
+
+        font-variant-numeric: lining-nums proportional-nums;
+        font-family: "Golos Text";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%;
+        color: #313131;
+    }
+
+    &__text {
+        font-family: "Golos Text";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%;
+        color: #313131;
+    }
+
+    &__card {
+        display: flex;
+        gap: 16px;
+    }
+
+    &__image {
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin-right: 0;
+        margin-left: 0;
+        text-align: center;
+
+        img {
+            max-width: 335px;
+        }
+    }
+
+    .swiper {
+        overflow: unset;
+        width: 100%;
+        padding-top: 148px;
+    }
+
+    .swiper-slide {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        padding: 62px 24px 34px;
+        height: auto;
+        // background: rgba(217, 217, 217, 1);
+        background: url('/image/stages_back.jpg');
+    }
+
+    .swiper-pagination-fraction {
+        top: var(--swiper-pagination-top, -100px);
+        bottom: unset;
+        right: 58px;
+        left: unset;
+        width: fit-content;
+
+        @include md {
+            z-index: -1;
+            width: 100%;
+            top: unset;
+            bottom: 12px;
+            left: 0;
+            right: 0;
+        }
+    }
+
+    .swiper-button-next,
+    .swiper-rtl .swiper-button-prev {
+        top: unset;
+        bottom: -(36px + 28px);
+        right: 0;
+        left: 150px;
+        margin-left: auto;
+        margin-right: auto;
+
+        width: 36px;
+        height: 36px;
+        background: url('/image/participants_arrow.svg');
+        background-size: contain;
+
+        .no-touch &:hover,
+        .touch &:active {
+            background: url('/image/participants_arrow_hover.svg');
+            transition: all .5s;
+        }
+
+    }
+
+    .swiper-button-prev,
+    .swiper-rtl .swiper-button-next {
+        top: unset;
+        bottom: -(36px + 28px);
+        right: 0;
+        left: -150px;
+        margin-left: auto;
+        margin-right: auto;
+
+        width: 36px;
+        height: 36px;
+        transform: rotate(180deg);
+        background: url('/image/participants_arrow.svg');
+        background-size: contain;
+        transition: all .5s;
+
+        .no-touch &:hover,
+        .touch &:active {
+            background: url('/image/participants_arrow_hover.svg');
+            transition: all .5s;
+        }
+    }
+
+    .swiper-button-next:after,
+    .swiper-rtl .swiper-button-prev:after,
+    .swiper-button-prev:after,
+    .swiper-rtl .swiper-button-next:after {
+        display: none;
+    }
+
+    .swiper-horizontal>.swiper-pagination-bullets,
+    .swiper-pagination-bullets.swiper-pagination-horizontal,
+    .swiper-pagination-custom,
+    .swiper-pagination-fraction {
+        z-index: 0;
+        bottom: var(--swiper-pagination-bottom, -(57px));
+    }
+
+    .swiper-pagination-bullet {
+        width: var(--swiper-pagination-bullet-width,var(--swiper-pagination-bullet-size,10px));
+        height: var(--swiper-pagination-bullet-height,var(--swiper-pagination-bullet-size,10px));
+    }
+
+    .swiper-pagination-bullet-active {
+        background: rgba(49, 49, 49, 1);
     }
 }
 
 .participants {
     padding-top: 200px;
     padding-bottom: 160px;
+
+    @include md {
+        padding-top: 120px;
+    }
 
 
     &__title {
@@ -533,6 +748,12 @@
         font-weight: 400;
         line-height: 120%;
         color: #313131;
+
+        @include sm {
+            display: block;
+            font-size: 36px;
+            text-align: center;
+        }
     }
 
     &__list {
@@ -579,21 +800,27 @@
     }
 
     &__button {
-        padding: 12px;
         border-radius: 62px;
         border: 1px solid #3057A2;
+
+        &:hover {
+            background: #3057A2;
+        }
     }
 
     &__button-blue {
+        padding: 12px;
         color: #3057A2;
-        leading-trim: both;
-        text-edge: cap;
         font-variant-numeric: lining-nums proportional-nums;
         font-family: "Golos Text";
         font-size: 16px;
         font-style: normal;
         font-weight: 500;
         line-height: 120%;
+
+        &:hover {
+            color: #FFFFFF;
+        }
     }
 
     &__hiddden {
@@ -685,33 +912,8 @@
     }
 }
 
-// .marquee {
-//     position: absolute;
-//     white-space: nowrap;
-//     color: #FFFFFF;
-//     font-size: 22px;
-//     animation: marquee 15s linear infinite;
-//     animation-timing-function: linear;
-//     background-position: 100%;
-//     background-repeat: repeat;
 
-//     height: 60px;
-//     background: rgba(245, 73, 50, 1);
-//     color: rgba(255, 255, 255, 1);
-
-//     display: flex;
-//     align-items: center; 
-// }
-
-// @keyframes marquee {
-//     0% {
-//         left: 100%;
-//     }
-
-//     100% {
-//         left: -100%;
-//     }
-// }
+// Бегущая строка
 
 .slider-container {
     display: flex;
@@ -760,10 +962,6 @@
     }
 }
 
-// .bull {
-//     padding-left: 12px;
-//     padding-right: 12px;
-// }
 
 
 
