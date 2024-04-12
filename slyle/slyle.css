@@ -140,7 +140,7 @@ textarea {
   .header {
     background: url("/image/header__cover-sm.png") no-repeat center;
     background-size: cover;
-    height: 855px;
+    height: 750px;
   }
 }
 .header__logo img {
@@ -762,6 +762,12 @@ textarea {
     padding-top: 120px;
   }
 }
+@media all and (max-width: 767px) {
+  .participants {
+    padding-top: 184px;
+    padding-bottom: 100px;
+  }
+}
 .participants__title {
   width: 100%;
   max-width: 806px;
@@ -777,13 +783,17 @@ textarea {
   .participants__title {
     display: block;
     font-size: 36px;
-    text-align: center;
   }
 }
 .participants__list {
   display: flex;
   justify-content: space-around;
   padding-top: 60px;
+}
+@media all and (max-width: 767px) {
+  .participants__list {
+    padding-top: 40px;
+  }
 }
 .participants .list {
   display: flex;
@@ -969,10 +979,10 @@ textarea {
 
 .footer {
   padding-top: 40px;
+  padding-bottom: 72px;
   background-color: #E9DED4;
 }
 .footer__text {
-  padding: 40px 0 72px;
   font-variant-numeric: lining-nums proportional-nums;
   font-family: "Golos Text";
   font-size: 16px;
