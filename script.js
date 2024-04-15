@@ -6,6 +6,10 @@ var swiper = new Swiper(".mySwiper", {
         },
     },
     slidesPerView: 1,
+    loop: true,
+    autoplay: {
+        delay: 4000,
+      },
     pagination: {
         el: ".swiper-pagination",
         type: "fraction",
